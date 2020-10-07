@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4F16727-038D-4B76-9FB6-FFB5227DED64}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>celes_and_lolit_Payroll_and_Attendance</RootNamespace>
+    <AssemblyName>celes_and_lolit-Payroll_and_Attendance</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\..\..\Desktop\AForge\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\..\..\Desktop\AForge\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\..\..\Desktop\AForge\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DPFPDevNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=696774c42ee28c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPDevNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPEngNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=7fe76e7adf19964b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPEngNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d902fe275a8d6cf2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPShrNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPVerNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4de0a9c4dcc83984, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPVerNET.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlBackup.1.0.1\lib\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Employee_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Login.Designer.cs">
+      <DependentUpon>Employee_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Winforms\Accountant_Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Accountant_Mainform.Designer.cs">
+      <DependentUpon>Accountant_Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_Attendance.Designer.cs">
+      <DependentUpon>Add_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_Cash_Advance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_Cash_Advance.Designer.cs">
+      <DependentUpon>Add_Cash_Advance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_Company_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_Company_Loan.Designer.cs">
+      <DependentUpon>Add_Company_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_Pag-IBIG_Calamity_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_Pag-IBIG_Calamity_Loan.Designer.cs">
+      <DependentUpon>Add_Pag-IBIG_Calamity_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_Pag-IBIG_Salary_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_Pag-IBIG_Salary_Loan.Designer.cs">
+      <DependentUpon>Add_Pag-IBIG_Salary_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_Position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_Position.Designer.cs">
+      <DependentUpon>Add_Position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_SSS_Calamity_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_SSS_Calamity_Loan.Designer.cs">
+      <DependentUpon>Add_SSS_Calamity_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_SSS_Salary_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_SSS_Salary_Loan.Designer.cs">
+      <DependentUpon>Add_SSS_Salary_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_User.Designer.cs">
+      <DependentUpon>Add_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Admin_Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Admin_Mainform.Designer.cs">
+      <DependentUpon>Admin_Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Attendance.Designer.cs">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Audit_Trail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Audit_Trail.Designer.cs">
+      <DependentUpon>Audit_Trail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\BIR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\BIR.Designer.cs">
+      <DependentUpon>BIR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Camera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Camera.Designer.cs">
+      <DependentUpon>Camera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\CaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\CaptureForm.designer.cs">
+      <DependentUpon>CaptureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Cash_Advance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Cash_Advance.Designer.cs">
+      <DependentUpon>Cash_Advance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Company_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Company_Loan.Designer.cs">
+      <DependentUpon>Company_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\DGVPrinter.cs" />
+    <Compile Include="Winforms\EmployeeDS.cs">
+      <DependentUpon>EmployeeDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\EmployeeDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Employee_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Employee_Attendance.Designer.cs">
+      <DependentUpon>Employee_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Employee_Overtime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Employee_Overtime.Designer.cs">
+      <DependentUpon>Employee_Overtime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Fingerprint_Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Fingerprint_Registration.Designer.cs">
+      <DependentUpon>Fingerprint_Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Holiday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Holiday.Designer.cs">
+      <DependentUpon>Holiday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Leave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Leave.Designer.cs">
+      <DependentUpon>Leave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Manager_Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Manager_Mainform.Designer.cs">
+      <DependentUpon>Manager_Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Pag-IBIG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Pag-IBIG.Designer.cs">
+      <DependentUpon>Pag-IBIG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Pag-IBIG_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Pag-IBIG_Loan.Designer.cs">
+      <DependentUpon>Pag-IBIG_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Payroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Payroll.Designer.cs">
+      <DependentUpon>Payroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Payslip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Payslip.Designer.cs">
+      <DependentUpon>Payslip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\PhilHealth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\PhilHealth.Designer.cs">
+      <DependentUpon>PhilHealth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Position.Designer.cs">
+      <DependentUpon>Position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Add_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Add_Employee.Designer.cs">
+      <DependentUpon>Add_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\alert.designer.cs">
+      <DependentUpon>alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Winforms\Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\Mainform.Designer.cs">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\SSS_Loan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\SSS_Loan.Designer.cs">
+      <DependentUpon>SSS_Loan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\SSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\SSS.Designer.cs">
+      <DependentUpon>SSS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winforms\User_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winforms\User_Management.Designer.cs">
+      <DependentUpon>User_Management.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Employee_Login.resx">
+      <DependentUpon>Employee_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Accountant_Mainform.resx">
+      <DependentUpon>Accountant_Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_Attendance.resx">
+      <DependentUpon>Add_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_Cash_Advance.resx">
+      <DependentUpon>Add_Cash_Advance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_Company_Loan.resx">
+      <DependentUpon>Add_Company_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_Pag-IBIG_Calamity_Loan.resx">
+      <DependentUpon>Add_Pag-IBIG_Calamity_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_Pag-IBIG_Salary_Loan.resx">
+      <DependentUpon>Add_Pag-IBIG_Salary_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_Position.resx">
+      <DependentUpon>Add_Position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_SSS_Calamity_Loan.resx">
+      <DependentUpon>Add_SSS_Calamity_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_SSS_Salary_Loan.resx">
+      <DependentUpon>Add_SSS_Salary_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Add_User.resx">
+      <DependentUpon>Add_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Admin_Mainform.resx">
+      <DependentUpon>Admin_Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Attendance.resx">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Audit_Trail.resx">
+      <DependentUpon>Audit_Trail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\BIR.resx">
+      <DependentUpon>BIR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Camera.resx">
+      <DependentUpon>Camera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\CaptureForm.resx">
+      <DependentUpon>CaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Cash_Advance.resx">
+      <DependentUpon>Cash_Advance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Company_Loan.resx">
+      <DependentUpon>Company_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Employee_Attendance.resx">
+      <DependentUpon>Employee_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Employee_Overtime.resx">
+      <DependentUpon>Employee_Overtime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Fingerprint_Registration.resx">
+      <DependentUpon>Fingerprint_Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Holiday.resx">
+      <DependentUpon>Holiday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Leave.resx">
+      <DependentUpon>Leave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Manager_Mainform.resx">
+      <DependentUpon>Manager_Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Pag-IBIG.resx">
+      <DependentUpon>Pag-IBIG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Pag-IBIG_Loan.resx">
+      <DependentUpon>Pag-IBIG_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Payroll.resx">
+      <DependentUpon>Payroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Payslip.resx">
+      <DependentUpon>Payslip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\PhilHealth.resx">
+      <DependentUpon>PhilHealth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Position.resx">
+      <DependentUpon>Position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Report1.rdlc" />
+    <EmbeddedResource Include="Winforms\Report2.rdlc" />
+    <EmbeddedResource Include="Winforms\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Winforms\Add_Employee.resx">
+      <DependentUpon>Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\alert.resx">
+      <DependentUpon>alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\Mainform.resx">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\SSS.resx">
+      <DependentUpon>SSS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\SSS_Loan.resx">
+      <DependentUpon>SSS_Loan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winforms\User_Management.resx">
+      <DependentUpon>User_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Winforms\EmployeeDS.xsc">
+      <DependentUpon>EmployeeDS.xsd</DependentUpon>
+    </None>
+    <None Include="Winforms\EmployeeDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Winforms\EmployeeDS.xss">
+      <DependentUpon>EmployeeDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dsa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\148781.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\148764.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blankimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_sign_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_forever_100px.png" />
+    <None Include="Resources\icons8_delete_sign_64px.png" />
+    <None Include="Resources\icons8_banknotes_48px.png" />
+    <None Include="Resources\icons8_purchase_order_48px.png" />
+    <None Include="Resources\icons8_today_32px.png" />
+    <None Include="Resources\icons8_unchecked_radio_button_24px_1.png" />
+    <None Include="Resources\icons8_unchecked_radio_button_24px_2.png" />
+    <None Include="Resources\icons8_initiate_money_transfer_filled_50px.png" />
+    <None Include="Resources\icons8_cash_in_hand_32px.png" />
+    <None Include="Resources\pay.png" />
+    <None Include="Resources\cash.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\bank.png" />
+    <None Include="Resources\icons8_add_24px.png" />
+    <None Include="Resources\icons8_add_24px_1.png" />
+    <None Include="Resources\icons8_trash_32px.png" />
+    <None Include="Resources\icons8_minimize_window_32px.png" />
+    <None Include="Resources\backup.png" />
+    <None Include="Resources\restore.png" />
+    <None Include="Resources\resume.png" />
+    <None Include="Resources\backup %282%29.png" />
+    <None Include="Resources\users.png" />
+    <None Include="Resources\taxes.png" />
+    <None Include="Resources\debit-card.png" />
+    <None Include="Resources\icons8_money_bag_48px.png" />
+    <None Include="Resources\icons8_attendance_mark_48px.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\analytics.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\file1.png" />
+    <None Include="Resources\overtime.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

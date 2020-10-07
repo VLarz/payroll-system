@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_celes_and_lolit_payrollDataSet" targetNamespace="http://tempuri.org/_celes_and_lolit_payrollDataSet.xsd" xmlns:mstns="http://tempuri.org/_celes_and_lolit_payrollDataSet.xsd" xmlns="http://tempuri.org/_celes_and_lolit_payrollDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="celes_and_lolit_payrollConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="celes_and_lolit_payrollConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.celes_and_lolit_Payroll_and_Attendance.Properties.Settings.GlobalReference.Default.celes_and_lolit_payrollConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="attendanceTableAdapter" GeneratorDataComponentClassName="attendanceTableAdapter" Name="attendance" UserDataComponentName="attendanceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `employee_id`, `time_in`, `time_out`, `status` FROM `attendance`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="birTableAdapter" GeneratorDataComponentClassName="birTableAdapter" Name="bir" UserDataComponentName="birTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.bir" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `minumum_range`, `maximum_range`, `tax_rate`, `tax_percentage` FROM `bir`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cash_advanceTableAdapter" GeneratorDataComponentClassName="cash_advanceTableAdapter" Name="cash_advance" UserDataComponentName="cash_advanceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.cash_advance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `employee_id`, `amount`, `interest`, `start`, `week`, `end`, `amount_per_week`, `description` FROM `cash_advance`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="day_workTableAdapter" GeneratorDataComponentClassName="day_workTableAdapter" Name="day_work" UserDataComponentName="day_workTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.day_work" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `date`, `employee_id`, `regular_hour`, `dayoff_on_duty`, `regular_holiday`, `dayoff_regular_holiday`, `special_holiday`, `dayoff_special_holiday`, `overtime_id`, `late`, `undertime`, `sick_leave`, `vacation_leave` FROM `day_work`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employeeTableAdapter" GeneratorDataComponentClassName="employeeTableAdapter" Name="employee" UserDataComponentName="employeeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `firstname`, `middlename`, `lastname`, `address`, `birthdate`, `date_hired`, `contact_number`, `position_id`, `salary_id`, `philhealth_number`, `sss_number`, `pagibig_number`, `picture`, `active` FROM `employee`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employee_leaveTableAdapter" GeneratorDataComponentClassName="employee_leaveTableAdapter" Name="employee_leave" UserDataComponentName="employee_leaveTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.employee_leave" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `employee_id`, `leave_id`, `from_date`, `to_date`, `days_use`, `days_left` FROM `employee_leave`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fingerprintTableAdapter" GeneratorDataComponentClassName="fingerprintTableAdapter" Name="fingerprint" UserDataComponentName="fingerprintTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.fingerprint" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `employee_id`, `fingerprint`, `finger` FROM `fingerprint`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="holidayTableAdapter" GeneratorDataComponentClassName="holidayTableAdapter" Name="holiday" UserDataComponentName="holidayTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.holiday" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `holiday`, `date`, `type` FROM `holiday`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hour_workTableAdapter" GeneratorDataComponentClassName="hour_workTableAdapter" Name="hour_work" UserDataComponentName="hour_workTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.hour_work" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `date`, `employee_id`, `regular_hour`, `overtime`, `dayoff_on_duty`, `dayoff_on_duty_overtime`, `regular_holiday`, `regular_holiday_overtime`, `dayoff_regular_holiday`, `dayoff_regular_holiday_overtime`, `special_holiday`, `special_holiday_overtime`, `dayoff_special_holiday`, `dayoff_special_holiday_overtime`, `late`, `undertime`, `sick_leave`, `vacation_leave` FROM `hour_work`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="leavesTableAdapter" GeneratorDataComponentClassName="leavesTableAdapter" Name="leaves" UserDataComponentName="leavesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.leaves" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `name`, `allowable_day` FROM `leaves`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="overtimeTableAdapter" GeneratorDataComponentClassName="overtimeTableAdapter" Name="overtime" UserDataComponentName="overtimeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="celes_and_lolit_payrollConnectionString (Settings)" DbObjectName="`celes_and_lolit-payroll`.overtime" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `date`, `employee_id`, `overtime`, `dayoff_on_duty_overtime`, `regular_holiday_overtime`, `dayoff_regular_holiday_overtime`, `special_holiday_overtime`, `dayoff_special_holiday_overtime`, `approval` FROM `overtime`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_celes_and_lolit_payrollDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_celes_and_lolit_payrollDataSet" msprop:Generator_UserDSName="_celes_and_lolit_payrollDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="attendance" msprop:Generator_TableClassName="attendanceDataTable" msprop:Generator_TableVarName="tableattendance" msprop:Generator_TablePropName="attendance" msprop:Generator_RowDeletingName="attendanceRowDeleting" msprop:Generator_RowChangingName="attendanceRowChanging" msprop:Generator_RowEvHandlerName="attendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="attendanceRowDeleted" msprop:Generator_UserTableName="attendance" msprop:Generator_RowChangedName="attendanceRowChanged" msprop:Generator_RowEvArgName="attendanceRowChangeEvent" msprop:Generator_RowClassName="attendanceRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bir" msprop:Generator_TableClassName="birDataTable" msprop:Generator_TableVarName="tablebir" msprop:Generator_TablePropName="bir" msprop:Generator_RowDeletingName="birRowDeleting" msprop:Generator_RowChangingName="birRowChanging" msprop:Generator_RowEvHandlerName="birRowChangeEventHandler" msprop:Generator_RowDeletedName="birRowDeleted" msprop:Generator_UserTableName="bir" msprop:Generator_RowChangedName="birRowChanged" msprop:Generator_RowEvArgName="birRowChangeEvent" msprop:Generator_RowClassName="birRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cash_advance" msprop:Generator_TableClassName="cash_advanceDataTable" msprop:Generator_TableVarName="tablecash_advance" msprop:Generator_TablePropName="cash_advance" msprop:Generator_RowDeletingName="cash_advanceRowDeleting" msprop:Generator_RowChangingName="cash_advanceRowChanging" msprop:Generator_RowEvHandlerName="cash_advanceRowChangeEventHandler" msprop:Generator_RowDeletedName="cash_advanceRowDeleted" msprop:Generator_UserTableName="cash_advance" msprop:Generator_RowChangedName="cash_advanceRowChanged" msprop:Generator_RowEvArgName="cash_advanceRowChangeEvent" msprop:Generator_RowClassName="cash_advanceRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="day_work" msprop:Generator_TableClassName="day_workDataTable" msprop:Generator_TableVarName="tableday_work" msprop:Generator_TablePropName="day_work" msprop:Generator_RowDeletingName="day_workRowDeleting" msprop:Generator_RowChangingName="day_workRowChanging" msprop:Generator_RowEvHandlerName="day_workRowChangeEventHandler" msprop:Generator_RowDeletedName="day_workRowDeleted" msprop:Generator_UserTableName="day_work" msprop:Generator_RowChangedName="day_workRowChanged" msprop:Generator_RowEvArgName="day_workRowChangeEvent" msprop:Generator_RowClassName="day_workRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_UserTableName="employee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_RowEvArgName="employeeRowChangeEvent" msprop:Generator_RowClassName="employeeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="employee_leave" msprop:Generator_TableClassName="employee_leaveDataTable" msprop:Generator_TableVarName="tableemployee_leave" msprop:Generator_TablePropName="employee_leave" msprop:Generator_RowDeletingName="employee_leaveRowDeleting" msprop:Generator_RowChangingName="employee_leaveRowChanging" msprop:Generator_RowEvHandlerName="employee_leaveRowChangeEventHandler" msprop:Generator_RowDeletedName="employee_leaveRowDeleted" msprop:Generator_UserTableName="employee_leave" msprop:Generator_RowChangedName="employee_leaveRowChanged" msprop:Generator_RowEvArgName="employee_leaveRowChangeEvent" msprop:Generator_RowClassName="employee_leaveRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fingerprint" msprop:Generator_TableClassName="fingerprintDataTable" msprop:Generator_TableVarName="tablefingerprint" msprop:Generator_TablePropName="fingerprint" msprop:Generator_RowDeletingName="fingerprintRowDeleting" msprop:Generator_RowChangingName="fingerprintRowChanging" msprop:Generator_RowEvHandlerName="fingerprintRowChangeEventHandler" msprop:Generator_RowDeletedName="fingerprintRowDeleted" msprop:Generator_UserTableName="fingerprint" msprop:Generator_RowChangedName="fingerprintRowChanged" msprop:Generator_RowEvArgName="fingerprintRowChangeEvent" msprop:Generator_RowClassName="fingerprintRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="holiday" msprop:Generator_TableClassName="holidayDataTable" msprop:Generator_TableVarName="tableholiday" msprop:Generator_TablePropName="holiday" msprop:Generator_RowDeletingName="holidayRowDeleting" msprop:Generator_RowChangingName="holidayRowChanging" msprop:Generator_RowEvHandlerName="holidayRowChangeEventHandler" msprop:Generator_RowDeletedName="holidayRowDeleted" msprop:Generator_UserTableName="holiday" msprop:Generator_RowChangedName="holidayRowChanged" msprop:Generator_RowEvArgName="holidayRowChangeEvent" msprop:Generator_RowClassName="holidayRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="hour_work" msprop:Generator_TableClassName="hour_workDataTable" msprop:Generator_TableVarName="tablehour_work" msprop:Generator_TablePropName="hour_work" msprop:Generator_RowDeletingName="hour_workRowDeleting" msprop:Generator_RowChangingName="hour_workRowChanging" msprop:Generator_RowEvHandlerName="hour_workRowChangeEventHandler" msprop:Generator_RowDeletedName="hour_workRowDeleted" msprop:Generator_UserTableName="hour_work" msprop:Generator_RowChangedName="hour_workRowChanged" msprop:Generator_RowEvArgName="hour_workRowChangeEvent" msprop:Generator_RowClassName="hour_workRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="leaves" msprop:Generator_TableClassName="leavesDataTable" msprop:Generator_TableVarName="tableleaves" msprop:Generator_TablePropName="leaves" msprop:Generator_RowDeletingName="leavesRowDeleting" msprop:Generator_RowChangingName="leavesRowChanging" msprop:Generator_RowEvHandlerName="leavesRowChangeEventHandler" msprop:Generator_RowDeletedName="leavesRowDeleted" msprop:Generator_UserTableName="leaves" msprop:Generator_RowChangedName="leavesRowChanged" msprop:Generator_RowEvArgName="leavesRowChangeEvent" msprop:Generator_RowClassName="leavesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="overtime" msprop:Generator_TableClassName="overtimeDataTable" msprop:Generator_TableVarName="tableovertime" msprop:Generator_TablePropName="overtime" msprop:Generator_RowDeletingName="overtimeRowDeleting" msprop:Generator_RowChangingName="overtimeRowChanging" msprop:Generator_RowEvHandlerName="overtimeRowChangeEventHandler" msprop:Generator_RowDeletedName="overtimeRowDeleted" msprop:Generator_UserTableName="overtime" msprop:Generator_RowChangedName="overtimeRowChanged" msprop:Generator_RowEvArgName="overtimeRowChangeEvent" msprop:Generator_RowClassName="overtimeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
